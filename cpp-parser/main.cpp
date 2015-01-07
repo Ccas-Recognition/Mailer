@@ -38,30 +38,36 @@ int main (int argc, char * argv[]) {
   std::stringstream ss;
   vector <string> fields;  
   string line;
+  size_t idx = 0;
   ifstream myfile (argv[1]);
   string chunk;
+  const char * separator = "";  
 
-  //ss << "[";
+  ss << "[";
 
   if (myfile.is_open())
   {
     while ( getline (myfile,line) )
-    {	
+    {
+      idx++;
+      if (idx == 1) continue;  	
       split(fields, line, is_any_of("\t"), token_compress_on);
-      for (size_t n = 0; n < fields.size(); n++){
+      size_t n = 1;
+      //for (size_t n = 0; n < fields.size(); n++){
 	if (fields[n].size()>0){
 	  chunk = fields[n];
 	  /* This will not compile on standards-conforming implementations because of the locale-taking overloads of std::isspace. You'll need to use ::isspace or perform some unreadable machinations with std::bind2nd. Isn't generic code beautiful?*/
 	  //chunk.erase(remove_if(chunk.begin(), chunk.end(), ::isspace), chunk.end());
-	  //ss << "\"" <<fields[n] << "\"" <<",";
-	  ss << trim(chunk) << "\n";
-}
+	  ss << separator << "\"" << trim(chunk)  << "\"";
+	  separator = ",";
+	  //ss << trim(chunk) << "\n";
+    //}
 }
       //cout << line << '\n';
     }
     myfile.close();
-
- //ss << "]";
+  
+ ss << "]";
 cout << ss.str();
   }
 
