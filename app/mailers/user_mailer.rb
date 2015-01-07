@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  @@pdf_name = 'Tokarev.pdf'
+  @@pdf_name = 'imta2015-cfp-2.pdf'
   @@pdf_path = Rails.root.to_s + "/" + @@pdf_name
   default from: "\"DCC RAS\" <lcmi@ccas.ru>"
 
