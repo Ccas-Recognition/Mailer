@@ -1,13 +1,13 @@
 class SendmailController < ApplicationController
-	@@arr = ["vichugunov@gmail.com"]
-	
+	@@arr = ["gmantonova@bk.ru","antciperov@cplire.ru","plat@ccas.ru","stas.artuhin@gmail.com","olga.artyukhova@mail.ru","asmus@planet.iitp.ru","atrushkvich.a@gmail.com","irina_msu@mail.ru","taras_borz@mail.ru","andrew2ka@mail.ru","geobs@list.ru","VetrovD@yandex.ru","menamet31@gmail.com","vngr@ccas.ru, vngrccas@mail.ru","pavel.voronin@gmail.com","voron@ccas.ru, vokov@forecsys.ru","sng@ccas.ru","info@mgupi.ru","grbunv-pavel@rambler.ru","igostev@gmail.com","ss_grigoreva@mail.ru","gromov@ccas.ru, agromov@forecsys.ru","igourevi@ccas.ru","acmdewansa@gmail.com","qsar_msu@mail.ru, devetyarov@mail.ru","dmitryy.demin@gmail.com","oxanad@mail.ru","alex_dok@mail.ru","dolenko@srd.sinp.msu.ru","nfd3001@gmail.com","marta.egorova@gmail.com","avz@genebee.msu.ru","dmitri.zolotukhin@gmail.com","labard@yandex.ru","vkalyan@mail.ru","vnk@iitp.ru","nnkater@yandex.ru","konst.i.kiy@gmail.com","vkober@hotmail.com, vitaly@iitp.ru","e.a.kozina@gmail.com","kozlitin@zelnet.ru","vnkozlov@mail.ru","koltsov@niisi.msk.ru, kppkpp@mail.ru","vadim@graphics.cs.msu.ru","korolev@mail.ru","korshakov_av@mail.ru","irina.koryabkina@gmail.com","nick@genebee.msu.ru","alexk@genebee.msu.ru","dkropotov@yandex.ru, dmitry.kropotov@gmail.com","kryzhanov@mail.ru","kryl@cs.msu.ru","kumskov@mail.ru","i.kurilin@samsung.com","akuharenko@graphics.cs.msu.ru","koutsaev@niisi.msk.ru","lange_mm@ccas.ru","alexeylevashov89@gmail.com","vvlobantsov@gmail.com","vallozmeister@gmail.com","lukina.tatiana@gmail.com","scorpio@zhukovsky.net","anton_msu@mail.ru","matveev@ccas.ru","gamunculus@inbox.ru","l.mest@ru.net","milukova@iitp.ru","katya.mikh@gmail.com","s.mikheev@samsung.com","mozerov@iitp.ru","morozov@cplire.ru","dmmur@ccas.ru, d_murashov@mail.ru","Amurynin@bk.ru, Amur@ccas.ru","aem.istranet@gmail.com","myach@inbox.ru","nasonov@cs.msu.ru","knek@list.ru","nikknovikov@gmail.com","obukhov@cplire.ru, yuvobukhov@mail.ru","ovseev@iitp.ru","osipa68@yahoo.com","paveljeva@yandex.ru","pa.pawka@gmail.com","peror@iitp.ru","sperev@yahoo.com","perminov@cplire.ru","ipers@srd.sinp.msu.ru","petrov@mipt.ru","vpitch@gmail.com","pvn-65@mail.ru","potapovdanila@mail.ru","p_prok@mail.ru","eugeny.prokhorov@gmail.com", "proher@gmail.com","arcelt@mail.ru","rudakov@ccas.ru","rvv@ccas.ru", "rvvccas@mail.ru","avsbmstu@yandex.ru","asaf@niifp.ru","ilia.safonov@nokia.com","svitanko@mail.ru","esemeikina@graphics.cs.msu.ru","alsemenov@umail.ru","senkoov@mail.ru","sersid@bk.ru","rg-toga@mail.ru","sinitsin@dol.ru", "efedotova@ipiran.ru","mikhail_smagin@yahoo.com","olegas88@mail.ru","www2014@ccas.ru","dsorokin@cs.msu.ru","100av@olvs.miee.ru","strelnikov_kn@graphics.cs.msu.ru","sagebrush@yandex.ru","o.sushkova@mail.ru", "olgasushka@gmail.com","TkachevY@gmail.com","tom@ispras.ru","trunov@iitp.ru","ytrusova@ccas.ru","turkin@olvs.miee.ru","tuchkova@ccas.ru","michael.ugrumov@mail.ru", "mugrumov@mail.ru","oushmaev@ipiran.ru","khaindrava82@mail.ru","khanina.natalia@gmail.com","chehovich@forecsys.ru","chuchu@ccas.ru","shalnov.eugen@gmail.com","info@shaternikov.ru","szport@gmail.com","jshugai@srd.sinp.msu.ru","yurin_d@inbox.ru","yakovlev.serge@gmail.com","artem@yatchenko.com.ua","werayashina@gmail.com", "vichugunov@gmail.com", "adil.tleubayev.3.14159@gmail.com", "ayat.ospanov@gmail.com", "alexeylevashov89@gmail.com"]
+
 	def deliver(user_mail)
-		UserMailer.imta_second_call(user_mail).deliver
+		UserMailer.seminar(user_mail).deliver
 	end
 
 	def mass_delivery
-		@@arr.each { |a| 
-			deliver(a) 
+		@@arr.each { |a|
+			deliver(a)
 		}
 	end
 end
