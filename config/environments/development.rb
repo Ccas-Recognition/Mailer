@@ -28,7 +28,7 @@ RubyMailerTest::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
    # ActionMailer settings
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
